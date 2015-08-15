@@ -41,14 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleNumberReader.cs" />
     <Compile Include="DiagDifference\DiagonalDifference.cs" />
     <Compile Include="DiagDifference\DiagonalDifferenceConsoleReader.cs" />
     <Compile Include="DiagDifference\IDiagonalDifferenceInputReader.cs" />
+    <Compile Include="INumberInputReader.cs" />
+    <Compile Include="IOutputWriter.cs" />
     <Compile Include="PlusMinus\IPlusMinusInputReader.cs" />
     <Compile Include="PlusMinus\PlusMinus.cs" />
     <Compile Include="PlusMinus\PlusMinusConsoleInputReader.cs" />
-    <Compile Include="Solution.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StairCaseCreator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
