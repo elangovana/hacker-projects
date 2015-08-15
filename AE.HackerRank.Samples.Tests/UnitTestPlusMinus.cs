@@ -98,7 +98,13 @@ namespace AE.HackerRank.Samples.Tests
     public class PlusMinus
     {
         public int RoundToDecimalPlaces = 3;
-        public IPlusMinusInputReader InputReader { get; set; }
+        private IPlusMinusInputReader _inputReader;
+
+        public IPlusMinusInputReader InputReader
+        {
+            get { return _inputReader ?? (_inputReader = new PlusMinusConsoleInputReader()); }
+            set { _inputReader= value; }
+        }
 
         public void Run(out double fractionPostiveNumbers, out double fractionNegativeNumbers,
             out double fractionZeroNumbers)
