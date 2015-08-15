@@ -44,6 +44,9 @@
     <Compile Include="DiagDifference\DiagonalDifference.cs" />
     <Compile Include="DiagDifference\DiagonalDifferenceConsoleReader.cs" />
     <Compile Include="DiagDifference\IDiagonalDifferenceInputReader.cs" />
+    <Compile Include="PlusMinus\IPlusMinusInputReader.cs" />
+    <Compile Include="PlusMinus\PlusMinus.cs" />
+    <Compile Include="PlusMinus\PlusMinusConsoleInputReader.cs" />
     <Compile Include="Solution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AE.HackerRank.Samples.PlusMinus;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -21,7 +22,7 @@ namespace AE.HackerRank.Samples.Tests
             double actualPostiveNumbers, actualNegativeNumbers, actualZeroNumbers;
 
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus {InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new PlusMinus.PlusMinus {InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);
@@ -46,7 +47,7 @@ namespace AE.HackerRank.Samples.Tests
 
             //Setup
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new PlusMinus.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);
@@ -69,7 +70,7 @@ namespace AE.HackerRank.Samples.Tests
 
             //Setup
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new PlusMinus.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);
@@ -92,61 +93,6 @@ namespace AE.HackerRank.Samples.Tests
             var numbers =
                 matrix.Split(new[] {NumberSeparator}, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
             return numbers;
-        }
-    }
-
-    public class PlusMinus
-    {
-        public int RoundToDecimalPlaces = 3;
-        private IPlusMinusInputReader _inputReader;
-
-        public IPlusMinusInputReader InputReader
-        {
-            get { return _inputReader ?? (_inputReader = new PlusMinusConsoleInputReader()); }
-            set { _inputReader= value; }
-        }
-
-        public void Run(out double fractionPostiveNumbers, out double fractionNegativeNumbers,
-            out double fractionZeroNumbers)
-        {
-            var length = InputReader.GetLength();
-            int countPostive = 0, countNegative = 0, countZero = 0;
-
-            foreach (var number in InputReader.GetNextNumber())
-            {
-                if (number > 0) countPostive++;
-
-                if (number < 0) countNegative++;
-
-                if (number == 0) countZero++;
-            }
-
-
-        
-            fractionNegativeNumbers = Math.Round( (double) countNegative/length , RoundToDecimalPlaces);
-            fractionPostiveNumbers =  Math.Round( (double) countPostive/length, RoundToDecimalPlaces );
-            fractionZeroNumbers = Math.Round((double)countZero / length, RoundToDecimalPlaces); ;
-        }
-    }
-
-    public interface IPlusMinusInputReader
-    {
-        int GetLength();
-        IEnumerable<int> GetNextNumber();
-    }
-
-    internal class PlusMinusConsoleInputReader : IPlusMinusInputReader
-    {
-        public int GetLength()
-        {
-            return int.Parse(Console.ReadLine());
-        }
-
-        public IEnumerable<int> GetNextNumber()
-        {
-            return Console.ReadLine()
-                .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse);
         }
     }
 }

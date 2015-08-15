@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace AE.HackerRank.Samples.PlusMinus
+{
+    internal class PlusMinusConsoleInputReader : IPlusMinusInputReader
+    {
+        public int GetLength()
+        {
+            return int.Parse(Console.ReadLine());
+        }
+
+        public IEnumerable<int> GetNextNumber()
+        {
+            return Console.ReadLine()
+                .Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse);
+        }
+    }
+}
