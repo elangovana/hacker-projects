@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiggerIsBetter.cs" />
     <Compile Include="ConsoleNumberReader.cs" />
+    <Compile Include="ConsoleOutputWriter.cs" />
+    <Compile Include="ConsoleWordsReader.cs" />
     <Compile Include="DiagDifference\DiagonalDifference.cs" />
     <Compile Include="DiagDifference\DiagonalDifferenceConsoleReader.cs" />
     <Compile Include="DiagDifference\IDiagonalDifferenceInputReader.cs" />
     <Compile Include="INumberInputReader.cs" />
     <Compile Include="IOutputWriter.cs" />
+    <Compile Include="IWordsReader.cs" />
     <Compile Include="PlusMinus\IPlusMinusInputReader.cs" />
     <Compile Include="PlusMinus\PlusMinus.cs" />
     <Compile Include="PlusMinus\PlusMinusConsoleInputReader.cs" />
