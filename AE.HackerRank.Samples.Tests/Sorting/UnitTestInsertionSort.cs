@@ -17,7 +17,7 @@ namespace AE.HackerRank.Samples.Tests.Sorting
                                "2 4 6 6 8 \n" +
                                "2 4 4 6 8 \n" +
                                "2 3 4 6 8 ")]
-        public void ShouldTraceInsertionSort(string almostSortedList, string expectedTrace)
+        public void ShouldTraceInsertionSortWhenGivenAnAlmostSortedList(string almostSortedList, string expectedTrace)
         {
             var expected = ParseListOfArrays(expectedTrace);
             var sut = new InsertionSortTrace();
