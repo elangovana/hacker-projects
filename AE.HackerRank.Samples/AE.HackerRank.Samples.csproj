@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandAlmostSortedTraceInsertionSort.cs" />
     <Compile Include="ConsoleNumberReader.cs" />
     <Compile Include="ConsoleOutputWriter.cs" />
+    <Compile Include="ConsoleReaderListOfNumbers.cs" />
     <Compile Include="ConsoleWordsReader.cs" />
     <Compile Include="DiagDifference\DiagonalDifferenceConsoleReader.cs" />
     <Compile Include="PlusMinus\PlusMinusConsoleInputReader.cs" />

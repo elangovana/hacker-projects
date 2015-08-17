@@ -59,6 +59,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Sorting\UnitTestInsertionSort.cs" />
     <Compile Include="UnitTestBiggerIsGreater.cs" />
     <Compile Include="UnitTestDiagnonalDifference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

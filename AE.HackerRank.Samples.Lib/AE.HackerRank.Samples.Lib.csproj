@@ -40,11 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BiggerIsBetter.cs" />
+    <Compile Include="InsertionSortTrace.cs" />
     <Compile Include="DiagonalDifference.cs" />
     <Compile Include="IDiagonalDifferenceInputReader.cs" />
     <Compile Include="INumberInputReader.cs" />
     <Compile Include="IOutputWriter.cs" />
     <Compile Include="IPlusMinusInputReader.cs" />
+    <Compile Include="IProblemCommand.cs" />
+    <Compile Include="IReaderListOfNumbers.cs" />
     <Compile Include="IWordsReader.cs" />
     <Compile Include="PlusMinus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
