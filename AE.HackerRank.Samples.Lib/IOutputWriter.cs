@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AE.HackerRank.Samples
+namespace AE.HackerRank.Samples.Lib
 {
     public interface IOutputWriter
     {

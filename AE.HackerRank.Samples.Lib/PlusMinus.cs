@@ -1,17 +1,13 @@
 using System;
 
-namespace AE.HackerRank.Samples.PlusMinus
+namespace AE.HackerRank.Samples.Lib
 {
     public class PlusMinus
     {
         public int RoundToDecimalPlaces = 3;
-        private IPlusMinusInputReader _inputReader;
 
-        public IPlusMinusInputReader InputReader
-        {
-            get { return _inputReader ?? (_inputReader = new PlusMinusConsoleInputReader()); }
-            set { _inputReader= value; }
-        }
+
+        public IPlusMinusInputReader InputReader { get; set; }
 
         public void Run(out double fractionPostiveNumbers, out double fractionNegativeNumbers,
             out double fractionZeroNumbers)

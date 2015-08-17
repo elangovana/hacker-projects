@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AE.HackerRank.Samples.PlusMinus
+namespace AE.HackerRank.Samples.Lib
 {
     public interface IPlusMinusInputReader
     {

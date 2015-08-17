@@ -1,4 +1,5 @@
 ﻿using System;
+using AE.HackerRank.Samples.Lib;
 
 namespace AE.HackerRank.Samples
 {

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using AE.HackerRank.Samples.DiagDifference;
+using AE.HackerRank.Samples.Lib;
 using NUnit.Framework;
 using Rhino.Mocks;
 

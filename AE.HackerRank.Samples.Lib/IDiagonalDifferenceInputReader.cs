@@ -1,4 +1,4 @@
-namespace AE.HackerRank.Samples.DiagDifference
+namespace AE.HackerRank.Samples.Lib
 {
     public interface IDiagonalDifferenceInputReader
     {

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using AE.HackerRank.Samples.Lib;
+using NUnit.Framework;
 using Rhino.Mocks;
 
 namespace AE.HackerRank.Samples.Tests

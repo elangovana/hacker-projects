@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AE.HackerRank.Samples.Lib;
 using AE.HackerRank.Samples.PlusMinus;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -22,7 +23,7 @@ namespace AE.HackerRank.Samples.Tests
             double actualPostiveNumbers, actualNegativeNumbers, actualZeroNumbers;
 
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus.PlusMinus {InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new Lib.PlusMinus {InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);
@@ -47,7 +48,7 @@ namespace AE.HackerRank.Samples.Tests
 
             //Setup
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new Lib.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);
@@ -70,7 +71,7 @@ namespace AE.HackerRank.Samples.Tests
 
             //Setup
             var mockInputReader = PlusMinusInputReader(ilength, matrix);
-            var sut = new PlusMinus.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
+            var sut = new Lib.PlusMinus { InputReader = mockInputReader, RoundToDecimalPlaces = iroundToPlaces};
 
             //Act
             sut.Run(out actualPostiveNumbers, out actualNegativeNumbers, out actualZeroNumbers);

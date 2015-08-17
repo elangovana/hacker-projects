@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AE.HackerRank.Samples
+namespace AE.HackerRank.Samples.Lib
 {
     /// <summary>
     /// Given a word w, rearrange the letters of w to construct another word s in such a way that s is lexicographically greater than w. In case of multiple possible answers, find the lexicographically smallest one.
@@ -16,17 +16,9 @@ namespace AE.HackerRank.Samples
         private IOutputWriter _outputWriter;
         public string NoAnswerValue = "no answer";
 
-        public IWordsReader InputReader
-        {
-            get { return _inputReader ?? (_inputReader = new ConsoleWordsReader()); }
-            set { _inputReader = value; }
-        }
+        public IWordsReader InputReader { get; set; }
 
-        public IOutputWriter OutputWriter
-        {
-            get { return _outputWriter ?? (_outputWriter = new ConsoleOutputWriter()); }
-            set { _outputWriter = value; }
-        }
+        public IOutputWriter OutputWriter { get; set; }
 
         public IEnumerable<string> Run()
         {

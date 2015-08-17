@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CFAD3C7D-7F97-42F2-A292-8945F762F796}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4734CE43-90F0-496F-9483-16088D2FF20D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AE.HackerRank.Samples</RootNamespace>
-    <AssemblyName>AE.HackerRank.Samples</AssemblyName>
+    <RootNamespace>AE.HackerRank.Samples.Lib</RootNamespace>
+    <AssemblyName>AE.HackerRank.Samples.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,19 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleNumberReader.cs" />
-    <Compile Include="ConsoleOutputWriter.cs" />
-    <Compile Include="ConsoleWordsReader.cs" />
-    <Compile Include="DiagDifference\DiagonalDifferenceConsoleReader.cs" />
-    <Compile Include="PlusMinus\PlusMinusConsoleInputReader.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="BiggerIsBetter.cs" />
+    <Compile Include="DiagonalDifference.cs" />
+    <Compile Include="IDiagonalDifferenceInputReader.cs" />
+    <Compile Include="INumberInputReader.cs" />
+    <Compile Include="IOutputWriter.cs" />
+    <Compile Include="IPlusMinusInputReader.cs" />
+    <Compile Include="IWordsReader.cs" />
+    <Compile Include="PlusMinus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AE.HackerRank.Samples.Lib\AE.HackerRank.Samples.Lib.csproj">
-      <Project>{4734ce43-90f0-496f-9483-16088d2ff20d}</Project>
-      <Name>AE.HackerRank.Samples.Lib</Name>
-    </ProjectReference>
+    <Compile Include="StairCaseCreator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

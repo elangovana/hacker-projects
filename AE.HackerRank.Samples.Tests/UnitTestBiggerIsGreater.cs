@@ -1,4 +1,5 @@
 using System.Globalization;
+using AE.HackerRank.Samples.Lib;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -8,14 +9,14 @@ namespace AE.HackerRank.Samples.Tests
     public class UnitTestBiggerIsGreater
     {
         private const char LineSeparator = ',';
-        private const string no_answer = "no answer";
+        private const string NoAnswer = "no answer";
 
-        [TestCase("ab,bb,hefg,dhck,dkhc,a", "ba," + no_answer + ",hegf,dhkc,hcdk," + no_answer)]
+        [TestCase("ab,bb,hefg,dhck,dkhc,a", "ba," + NoAnswer + ",hegf,dhkc,hcdk," + NoAnswer)]
         [TestCase("ab", "ba")]
-        [TestCase("a", no_answer)]
+        [TestCase("a", NoAnswer)]
         [TestCase("ab", "ba")]
         [TestCase("aab", "aba")]
-        [TestCase("bb", no_answer)]
+        [TestCase("bb", NoAnswer)]
         [TestCase("hefg", "hegf")]
         [TestCase("dkhc", "hcdk")]
         [TestCase("4753", "5347")]
@@ -23,14 +24,14 @@ namespace AE.HackerRank.Samples.Tests
         [TestCase("8573", "8735")]
         [TestCase("4375", "4537")]
         [TestCase("4357", "4375")]
-        [TestCase("7531", no_answer)]
+        [TestCase("7531", NoAnswer)]
         [TestCase("bvulomthrfugqfbaknxginokekuemgb", "bvulomthrfugqfbaknxginokekugbem")]
         public void ShouldFindSmallest(string iwords, string expected)
         {
             //Arrange                       
 
             var mockReader = GetMockReader(iwords);
-            var sut = new BiggerIsBetter {InputReader = mockReader, NoAnswerValue = no_answer};
+            var sut = new BiggerIsBetter {InputReader = mockReader, NoAnswerValue = NoAnswer};
             //Act
             var actual = sut.Run();
 

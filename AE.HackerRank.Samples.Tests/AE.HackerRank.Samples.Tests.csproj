@@ -66,6 +66,10 @@
     <Compile Include="UnitTestStaircase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AE.HackerRank.Samples.Lib\AE.HackerRank.Samples.Lib.csproj">
+      <Project>{4734ce43-90f0-496f-9483-16088d2ff20d}</Project>
+      <Name>AE.HackerRank.Samples.Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AE.HackerRank.Samples\AE.HackerRank.Samples.csproj">
       <Project>{cfad3c7d-7f97-42f2-a292-8945f762f796}</Project>
       <Name>AE.HackerRank.Samples</Name>

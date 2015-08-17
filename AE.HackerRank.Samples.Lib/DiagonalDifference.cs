@@ -1,16 +1,12 @@
-﻿using System;
+using System;
 
-namespace AE.HackerRank.Samples.DiagDifference
+namespace AE.HackerRank.Samples.Lib
 {
     public class DiagonalDifference
     {
-        private IDiagonalDifferenceInputReader _inputReader;
+      
 
-        public IDiagonalDifferenceInputReader InputReader
-        {
-            get { return _inputReader ?? (_inputReader = new DiagonalDifferenceConsoleReader()); }
-            set { _inputReader = value; }
-        }
+        public IDiagonalDifferenceInputReader InputReader { get; set; }
 
         public int Run()
         {

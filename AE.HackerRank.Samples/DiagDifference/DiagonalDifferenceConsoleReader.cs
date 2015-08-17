@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AE.HackerRank.Samples.Lib;
 
 namespace AE.HackerRank.Samples.DiagDifference
 {

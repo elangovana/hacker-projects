@@ -1,32 +1,23 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 
-namespace AE.HackerRank.Samples
+namespace AE.HackerRank.Samples.Lib
 {
     public class StairCaseCreator
     {
-        private INumberInputReader _inputReader;
+       
 
         private char _pattern = '#';
 
-        public INumberInputReader InputReader
-        {
-            get { return _inputReader ?? (_inputReader = new ConsoleNumberReader()); }
-            set { _inputReader = value; }
-        }
+        public INumberInputReader InputReader { get; set; }
 
-        private IOutputWriter _outputWriter;
+      
         public char Pattern
         {
             get { return _pattern; }
             set { _pattern = value; }
         }
 
-        public IOutputWriter OutputWriter
-        {
-            get { return _outputWriter ?? (_outputWriter = new ConsoleOutputWriter()); }
-            set { _outputWriter = value; }
-        }
+        public IOutputWriter OutputWriter { get; set; }
 
         public IEnumerable<string> Run()
         {
