@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AE.HackerRank.Samples.Lib;
 using NUnit.Framework;
-using Rhino.Mocks;
 
 namespace AE.HackerRank.Samples.Tests.Sorting
 {
@@ -29,7 +28,26 @@ namespace AE.HackerRank.Samples.Tests.Sorting
             Assert.AreEqual(expected, actual);
         }
 
-       
+        [TestCase("1", "")]
+        [TestCase("1 2", "1 2")]
+        [TestCase("1 3 2", "1 3  2 \n 1 2 3")]
+        [TestCase("2 1 3", "1 2 3 \n 1 2 3")]
+        [TestCase("1 4 3 5 6 2", "1 4 3 5 6 2 \n" +
+                                 "1 3 4 5 6 2 \n" +
+                                 "1 3 4 5 6 2 \n" +
+                                 "1 3 4 5 6 2 \n" +
+                                 "1 2 3 4 5 6 ")]
+        public void ShouldTraceInsertionSort(string almostSortedList, string expectedTrace)
+        {
+            var expected = ParseListOfArrays(expectedTrace);
+            var sut = new InsertionSortTrace();
+
+            //Act
+            var actual = sut.TraceSort(ParseListOfNumbers(almostSortedList));
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         private IEnumerable<int[]> ParseListOfArrays(string listOfArrays)
         {
@@ -48,6 +66,4 @@ namespace AE.HackerRank.Samples.Tests.Sorting
 
         public char[] NumberSeparator = {' '};
     }
-
-   
 }

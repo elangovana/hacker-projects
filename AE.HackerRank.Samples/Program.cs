@@ -7,7 +7,7 @@ namespace AE.HackerRank.Samples
     {
         private static void Main(string[] args)
         {
-           IProblemCommand command = new CommandAlmostSortedTraceInsertionSort();
+           IProblemCommand command = new CommandTraceInsertionSort();
             command.Run();
             Console.ReadLine();
         }
