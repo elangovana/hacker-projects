@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandAlmostSortedTraceInsertionSort.cs" />
+    <Compile Include="CommandProblemShortestReach.cs" />
     <Compile Include="CommandTraceInsertionSort.cs" />
+    <Compile Include="ConsoleGraphReader.cs" />
     <Compile Include="ConsoleNumberReader.cs" />
     <Compile Include="ConsoleOutputWriter.cs" />
     <Compile Include="ConsoleReaderListOfNumbers.cs" />

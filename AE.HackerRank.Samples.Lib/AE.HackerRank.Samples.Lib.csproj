@@ -39,7 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractGraph.cs" />
+    <Compile Include="AdjacencyListEdge.cs" />
+    <Compile Include="AdjacencyListNode.cs" />
+    <Compile Include="AlgorithmNearestHopsBfs.cs" />
     <Compile Include="BiggerIsBetter.cs" />
+    <Compile Include="Edge.cs" />
+    <Compile Include="IGraphReader.cs" />
     <Compile Include="InsertionSortTrace.cs" />
     <Compile Include="DiagonalDifference.cs" />
     <Compile Include="IDiagonalDifferenceInputReader.cs" />
@@ -48,10 +54,12 @@
     <Compile Include="IPlusMinusInputReader.cs" />
     <Compile Include="IProblemCommand.cs" />
     <Compile Include="IReaderListOfNumbers.cs" />
+    <Compile Include="IShortestHops.cs" />
     <Compile Include="IWordsReader.cs" />
     <Compile Include="PlusMinus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StairCaseCreator.cs" />
+    <Compile Include="UndirectedGraph.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

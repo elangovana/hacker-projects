@@ -60,9 +60,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Sorting\UnitTestInsertionSort.cs" />
+    <Compile Include="UnitTestUndirectedGraph.cs" />
     <Compile Include="UnitTestBiggerIsGreater.cs" />
     <Compile Include="UnitTestDiagnonalDifference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestNearestNodes.cs" />
     <Compile Include="UnitTestPlusMinus.cs" />
     <Compile Include="UnitTestStaircase.cs" />
   </ItemGroup>
@@ -78,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LargeGraphTestCase.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
