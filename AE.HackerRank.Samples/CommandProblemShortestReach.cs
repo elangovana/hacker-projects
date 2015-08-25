@@ -12,7 +12,7 @@ namespace AE.HackerRank.Samples
 
         public IGraphReader<int, int> Reader
         {
-            get { return _reader ?? (_reader = new ConsoleGraphReader(){ IgnoreDuplicateEdges = false}); }
+            get { return _reader ?? (_reader = new ConsoleGraphReader(){ IgnoreDuplicateEdges = true}); }
             set { _reader = value; }
         }
 

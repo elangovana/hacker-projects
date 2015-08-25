@@ -5,7 +5,8 @@ namespace AE.HackerRank.Samples.Lib
 {
     public class AlgorithmNearestHopsBfs<TNode, TEdgeWeight> : IShortestHops<TNode, TEdgeWeight>
     {
-        private Stack<TNode> _bfsStack;
+        private Queue<TNode> _bfsQueue;
+        private HashSet<TNode> _visitedNodes;
         private AbstractGraph<TNode, TEdgeWeight> _graph;
         private Dictionary<TNode, int> _result;
 
@@ -21,38 +22,41 @@ namespace AE.HackerRank.Samples.Lib
         private void Init(AbstractGraph<TNode, TEdgeWeight> graph)
         {
             _graph = graph;
-            _bfsStack = new Stack<TNode>();
+            _bfsQueue = new Queue<TNode>();
             _result = new Dictionary<TNode, int>();
+            _visitedNodes = new HashSet<TNode>();
         }
 
         private void BfsSearch(TNode sourceNode)
         {
-            _bfsStack.Push(sourceNode);
+            _bfsQueue.Enqueue(sourceNode);
+            _visitedNodes.Add(sourceNode);
 
-            var unvisitedNeighbours = new List<TNode>();
-            foreach (var neighbour in    _graph.GetNeighbours(sourceNode))
+            while (_bfsQueue.Any())
             {
-                if (IsVisited(neighbour)) continue;
-                unvisitedNeighbours.Add(neighbour);
-                ReportDistance(neighbour, sourceNode);
-            }
+                var currentNode = _bfsQueue.Peek();
+                foreach (var neighbour in _graph.GetNeighbours(currentNode))
+                {
+                    if (IsVisited(neighbour)) continue;
 
-            foreach (var neighbour in unvisitedNeighbours)
-            {
-               BfsSearch(neighbour);
+                    ReportDistance(neighbour, currentNode);
+
+                    _bfsQueue.Enqueue(neighbour);
+                    _visitedNodes.Add(neighbour);
+                }
+                _bfsQueue.Dequeue();
             }
-         
         }
 
         private bool IsVisited(TNode node)
         {
-            return _bfsStack.Contains(node);
+            return _visitedNodes.Contains(node);
         }
 
         private void ReportDistance(TNode node, TNode parentNode)
         {
             var nodeDist = _result.ContainsKey(parentNode) ? _result[parentNode] + 1 : 0;
-           if (!_result.ContainsKey(node)) _result.Add(node, nodeDist);
+            if (!_result.ContainsKey(node)) _result.Add(node, nodeDist);
         }
     }
 }

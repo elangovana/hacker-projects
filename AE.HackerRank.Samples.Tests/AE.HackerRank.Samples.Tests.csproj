@@ -60,6 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Sorting\UnitTestInsertionSort.cs" />
+    <Compile Include="CoursePopularityTest.cs" />
     <Compile Include="UnitTestUndirectedGraph.cs" />
     <Compile Include="UnitTestBiggerIsGreater.cs" />
     <Compile Include="UnitTestDiagnonalDifference.cs" />
