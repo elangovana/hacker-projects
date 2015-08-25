@@ -59,7 +59,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="LoadTestNearestNodes.cs" />
     <Compile Include="Sorting\UnitTestInsertionSort.cs" />
     <Compile Include="CoursePopularityTest.cs" />
     <Compile Include="UnitTestUndirectedGraph.cs" />

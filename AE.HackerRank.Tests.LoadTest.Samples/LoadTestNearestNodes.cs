@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using AE.HackerRank.Samples.Lib;
-using NUnit;
 using NUnit.Framework;
 
-namespace AE.HackerRank.Samples.Tests
+namespace AE.HackerRank.Tests.LoadTest.Samples
 {
     [TestFixture]
    public class LoadTestNearestNodes
     {
        // [TestCase( 1000, 1000*999/2, 1*1000 )]
-         [TestCase(1000, 1000 * 999 / 2, 1)]
-        // [TestCase(1001, 1001 * 1000 / 2, 1)]
-        public void ShouldGetNearestNodes(int noOfNodes, int maxNoOfEdges,
+         [TestCase(1000, 1000 * 999 / 2, 1*1000)]
+        // [TestCase(1001, 1001 * 1000 / 2, 1 * 1000)]
+        public void ShouldGetNearestNodesWithinSpecifiedTimelimit(int noOfNodes, int maxNoOfEdges,
          int  timeInMilliSeconds)
         {
             //Arrange
-            
+            var startTime = DateTime.UtcNow;
             var graph = GetGraph(noOfNodes, maxNoOfEdges);
             var sourceNode = 1;
           
      
-            var startTime = DateTime.UtcNow;
+           
             IShortestHops<int, int> sut = new AlgorithmNearestHopsBfs<int, int>();
 
             //Act

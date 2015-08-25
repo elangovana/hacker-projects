@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE.HackerRank.Samples.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE.HackerRank.Samples.Lib", "AE.HackerRank.Samples.Lib\AE.HackerRank.Samples.Lib.csproj", "{4734CE43-90F0-496F-9483-16088D2FF20D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AE.HackerRank.Tests.LoadTest.Samples", "AE.HackerRank.Tests.LoadTest.Samples\AE.HackerRank.Tests.LoadTest.Samples.csproj", "{7BAF9C1F-43C4-49C8-BF1B-78200930F296}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{4734CE43-90F0-496F-9483-16088D2FF20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4734CE43-90F0-496F-9483-16088D2FF20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4734CE43-90F0-496F-9483-16088D2FF20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BAF9C1F-43C4-49C8-BF1B-78200930F296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BAF9C1F-43C4-49C8-BF1B-78200930F296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BAF9C1F-43C4-49C8-BF1B-78200930F296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BAF9C1F-43C4-49C8-BF1B-78200930F296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

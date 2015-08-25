@@ -5,56 +5,48 @@ namespace AE.HackerRank.Samples.Lib
 {
     public abstract class AbstractGraph<TNode, TEdgeWeight>
     {
-        private readonly List<AdjacencyListNode<TNode, TEdgeWeight>> _adjacencyListNodes;
+        private readonly Dictionary<TNode, AdjacencyListEdge<TNode, TEdgeWeight>> _adjacencyListNodes;
 
         protected AbstractGraph()
         {
-            _adjacencyListNodes = new List<AdjacencyListNode<TNode, TEdgeWeight>>();
+            _adjacencyListNodes = new Dictionary<TNode, AdjacencyListEdge<TNode, TEdgeWeight>>();
         }
 
         public virtual void AddNode(TNode node)
         {
             //   if (!_adjacencyListNodes.Any(x => x.SourceNode.Equals(node)))
-            _adjacencyListNodes.Add(new AdjacencyListNode<TNode, TEdgeWeight> {SourceNode = node});
+            _adjacencyListNodes.Add(node, null);
         }
 
         public virtual IEnumerable<TNode> GetNodes()
         {
-            return _adjacencyListNodes.Select(x => x.SourceNode);
+            return _adjacencyListNodes.Keys;
         }
 
-        private AdjacencyListNode<TNode, TEdgeWeight> AddNodeIfItDoesntExist(TNode node)
+        private void AddNodeIfItDoesntExist(TNode node)
         {
-            var adjacencyListNode = _adjacencyListNodes.FirstOrDefault(x => x.SourceNode.Equals(node));
-
-            if (adjacencyListNode == null)
-            {
-                adjacencyListNode = new AdjacencyListNode<TNode, TEdgeWeight> {SourceNode = node};
-
-                _adjacencyListNodes.Add(adjacencyListNode);
-            }
-            return adjacencyListNode;
+           
+            if (!_adjacencyListNodes.ContainsKey(node)) _adjacencyListNodes.Add(node, null);
         }
 
         public virtual void AddEdge(TNode sourceNode, TNode destinationNode, TEdgeWeight edgeWeight)
         {
-           var sourceAdjListNode =  AddNodeIfItDoesntExist(sourceNode);
+           AddNodeIfItDoesntExist(sourceNode);
            AddNodeIfItDoesntExist(destinationNode);
 
 
-           var anotherNeighbour = sourceAdjListNode.EdgeList;
-           sourceAdjListNode.EdgeList = new AdjacencyListEdge<TNode, TEdgeWeight>
+           var nextAdjacencyEdge = _adjacencyListNodes[sourceNode];
+           _adjacencyListNodes[sourceNode] = new AdjacencyListEdge<TNode, TEdgeWeight>
             {
                 DestinatioNode = destinationNode,
                 Weight = edgeWeight,
-                Next = anotherNeighbour
+                Next = nextAdjacencyEdge
             };
         }
 
         public IEnumerable<TNode> GetNeighbours(TNode isourceNode)
         {
-            var neighbourNode = _adjacencyListNodes.Single(x => x.SourceNode.Equals(isourceNode));
-            var edgeList = neighbourNode.EdgeList;
+            var edgeList = _adjacencyListNodes[isourceNode];    
             while (edgeList != null)
             {
                 var currentEdgeList = edgeList;
