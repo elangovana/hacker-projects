@@ -14,8 +14,8 @@ namespace AE.HackerRank.Samples.Lib
 
         public virtual void AddNode(TNode node)
         {
-            if (!_adjacencyListNodes.Any(x => x.SourceNode.Equals(node)))
-                _adjacencyListNodes.Add(new AdjacencyListNode<TNode, TEdgeWeight> {SourceNode = node});
+            //   if (!_adjacencyListNodes.Any(x => x.SourceNode.Equals(node)))
+            _adjacencyListNodes.Add(new AdjacencyListNode<TNode, TEdgeWeight> {SourceNode = node});
         }
 
         public virtual IEnumerable<TNode> GetNodes()
@@ -23,15 +23,27 @@ namespace AE.HackerRank.Samples.Lib
             return _adjacencyListNodes.Select(x => x.SourceNode);
         }
 
+        private AdjacencyListNode<TNode, TEdgeWeight> AddNodeIfItDoesntExist(TNode node)
+        {
+            var adjacencyListNode = _adjacencyListNodes.FirstOrDefault(x => x.SourceNode.Equals(node));
+
+            if (adjacencyListNode == null)
+            {
+                adjacencyListNode = new AdjacencyListNode<TNode, TEdgeWeight> {SourceNode = node};
+
+                _adjacencyListNodes.Add(adjacencyListNode);
+            }
+            return adjacencyListNode;
+        }
+
         public virtual void AddEdge(TNode sourceNode, TNode destinationNode, TEdgeWeight edgeWeight)
         {
-            AddNode(sourceNode);
-            AddNode(destinationNode);
+           var sourceAdjListNode =  AddNodeIfItDoesntExist(sourceNode);
+           AddNodeIfItDoesntExist(destinationNode);
 
-            var adjacenyListNode = _adjacencyListNodes.Single(x => x.SourceNode.Equals(sourceNode));
 
-            var anotherNeighbour = adjacenyListNode.EdgeList;
-            adjacenyListNode.EdgeList = new AdjacencyListEdge<TNode, TEdgeWeight>
+           var anotherNeighbour = sourceAdjListNode.EdgeList;
+           sourceAdjListNode.EdgeList = new AdjacencyListEdge<TNode, TEdgeWeight>
             {
                 DestinatioNode = destinationNode,
                 Weight = edgeWeight,

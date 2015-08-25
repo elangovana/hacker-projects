@@ -17,7 +17,7 @@ namespace AE.HackerRank.Samples.Tests
         [TestCase("1", 6, 1, "0")]
         [TestCase("1-2", 6, 1, "0 1")]
         [TestCase("1-2, 1-3, 3-2", 6, 1, "0 1 1")]
-        [TestCase("1-2,1-3,1", 6, 1, "0 1 1")]
+        [TestCase("1-2,1-3", 6, 1, "0 1 1")]
         [TestCase("1-1", 6, 1, "0")]
         [TestCase("10-6,3-1,10-1,10-1,3-1,1-8,5-2", 6, 3, "1 0 3 2 2")]
 
